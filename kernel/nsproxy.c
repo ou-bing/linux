@@ -29,7 +29,7 @@
 
 static struct kmem_cache *nsproxy_cachep;
 
-struct nsproxy init_nsproxy = {
+struct nsproxy init_nsproxy = { /* 命名空间的默认值，它使用了不同类型命名空间的默认值 */
 	.count			= ATOMIC_INIT(1),
 	.uts_ns			= &init_uts_ns,
 #if defined(CONFIG_POSIX_MQUEUE) || defined(CONFIG_SYSVIPC)

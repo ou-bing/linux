@@ -734,7 +734,7 @@ struct kmap_ctrl {
 #endif
 };
 
-struct task_struct {
+struct task_struct { /* 代表进程的结构体 */
 #ifdef CONFIG_THREAD_INFO_IN_TASK
 	/*
 	 * For reasons of header soup (see current_thread_info()), this
@@ -742,7 +742,7 @@ struct task_struct {
 	 */
 	struct thread_info		thread_info;
 #endif
-	unsigned int			__state;
+	unsigned int			__state; /*	进程状态，定义在上方 */
 
 #ifdef CONFIG_PREEMPT_RT
 	/* saved state for "spinlock sleepers" */
@@ -1091,7 +1091,7 @@ struct task_struct {
 	struct io_uring_task		*io_uring;
 #endif
 
-	/* Namespaces: */
+	/* 命名空间 */
 	struct nsproxy			*nsproxy;
 
 	/* Signal handlers: */

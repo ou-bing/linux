@@ -7,7 +7,7 @@
 #include <linux/uts.h>
 #include <linux/utsname.h>
 
-struct uts_namespace init_uts_ns = {
+struct uts_namespace init_uts_ns = {  /* uts 命名空间的默认值，使用了一系列的预定义常数 */
 	.ns.count = REFCOUNT_INIT(2),
 	.name = {
 		.sysname	= UTS_SYSNAME,
